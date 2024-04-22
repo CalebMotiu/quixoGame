@@ -1,5 +1,5 @@
 function setup(){
-    createCanvas(560, 560);
+    createCanvas(displayWidth, displayHeight);
     initBoxes();
     
 
