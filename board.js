@@ -9,6 +9,6 @@ function setup(){
 }
 function draw(){
 
-    background("green")
+    background("rgb(142, 109, 87)")
     creatBoxes()
 }
