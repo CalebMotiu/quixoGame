@@ -7,5 +7,6 @@ let board = {
 
 function creatBoard() {
     fill(board.color)
+    stroke("black")
     square(board.x, board.y, board.side)
 }
