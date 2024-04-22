@@ -4,15 +4,16 @@ const boxesRow = 1;
 const boxesColumn = 1;
 const boardSize = 5;
 const startingPosition = 25;
-const side = 100;
+const margin = 20;
+const side = (board.side - (margin * 2)) / 5;
 const distanceBetweenBoxes = 2;
 
 function initBoxes() {
   for (let i = 0; i < boardSize; i++) {
     for (let j = 0; j < boardSize; j++) {
       boxes[i][j] = {
-        x: i * side + distanceBetweenBoxes + startingPosition,
-        y: j * side + distanceBetweenBoxes + startingPosition,
+        x: i * side + margin,
+        y: j * side + margin,
         color: "rgb(163, 90, 42)",
         side: side,
         txt: "",
