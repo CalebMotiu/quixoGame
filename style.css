@@ -1,3 +1,53 @@
-body{
-background-color: rgb(163, 90, 42);
+body {
+    background-color: rgb(0, 0, 0);
+}
+
+button {
+    background-color: #d3b7a1;
+    color: #4a4846;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #e1c3ac;
+    color: #4a4846;
+}
+
+.inputPlayer1[type="text"] {
+    background-color: #d3b7a1;
+    color: #4a4846;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.inputPlayer1[type="text"]:hover {
+    background-color: #e1c3ac;
+    color: #4a4846;
+}
+
+.inputPlayer2[type="text"] {
+    background-color: #d3b7a1;
+    color: #4a4846;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.inputPlayer2[type="text"]:hover {
+    background-color: #e1c3ac;
+    color: #4a4846;
 }
