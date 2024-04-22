@@ -11,7 +11,8 @@ function initBoxes(){
           x: i*110 + 10,
           y: j*110 + 10,
           color: "rgb(163, 90, 42)",
-          side:100
+          side:100,
+          txt: ""
         }
       }
     }
