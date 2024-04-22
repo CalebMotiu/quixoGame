@@ -6,6 +6,7 @@ function setup(){
 }
 function draw(){
 
+    overBox()
     creatBoard()
     creatBoxes()
 }
