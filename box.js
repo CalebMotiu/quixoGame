@@ -28,9 +28,9 @@ function overBox() {
   for (let i = 0; i < boardSize; i++) {
     let j = 0;
     if (
-      mouseX > boxes[i][j].x - boxes[i][j].side &&
+      mouseX > boxes[i][j].x  &&
       mouseX < boxes[i][j].x + boxes[i][j].side &&
-      mouseY > boxes[i][j].y - boxes[i][j].side &&
+      mouseY > boxes[i][j].y  &&
       mouseY < boxes[i][j].y + boxes[i][j].side
     ) {
       overBox = true;
@@ -41,9 +41,9 @@ function overBox() {
   for (let i = 0; i < boardSize; i++) {
     let j = 4;
     if (
-      mouseX > boxes[i][j].x - boxes[i][j].side &&
+      mouseX > boxes[i][j].x &&
       mouseX < boxes[i][j].x + boxes[i][j].side &&
-      mouseY > boxes[i][j].y - boxes[i][j].side &&
+      mouseY > boxes[i][j].y &&
       mouseY < boxes[i][j].y + boxes[i][j].side
     ) {
       overBox = true;
@@ -54,9 +54,9 @@ function overBox() {
   for (let j = 0; j < boardSize; j++) {
     let i = 4;
     if (
-      mouseX > boxes[i][j].x - boxes[i][j].side &&
+      mouseX > boxes[i][j].x  &&
       mouseX < boxes[i][j].x + boxes[i][j].side &&
-      mouseY > boxes[i][j].y - boxes[i][j].side &&
+      mouseY > boxes[i][j].y  &&
       mouseY < boxes[i][j].y + boxes[i][j].side
     ) {
       overBox = true;
@@ -68,9 +68,9 @@ function overBox() {
   for (let j = 0; j < boardSize; j++) {
     let i = 0;
     if (
-      mouseX > boxes[i][j].x - boxes[i][j].side &&
+      mouseX > boxes[i][j].x  &&
       mouseX < boxes[i][j].x + boxes[i][j].side &&
-      mouseY > boxes[i][j].y - boxes[i][j].side &&
+      mouseY > boxes[i][j].y  &&
       mouseY < boxes[i][j].y + boxes[i][j].side
     ) {
       overBox = true;
