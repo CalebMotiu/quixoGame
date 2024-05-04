@@ -12,4 +12,5 @@ function draw(){
     overBoxColumn(4)
     creatBoard()
     creatBoxes()
+    mousePressed()
 }

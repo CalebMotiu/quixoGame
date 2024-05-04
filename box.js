@@ -9,6 +9,7 @@ const borderSize = 1;
 const side = (board.side - (margin * 2) - (2 * borderSize * (boardSize - 1))) / boardSize;
 const distanceBetweenBoxes = 2;
 
+
 function initBoxes() {
   for (let i = 0; i < boardSize; i++) {
     for (let j = 0; j < boardSize; j++) {
@@ -18,50 +19,56 @@ function initBoxes() {
         color: "rgb(163, 90, 42)",
         side: side,
         txt: "",
-        border: "black"
+        border: "black",
+        overBox: false
+
       }
     }
   }
 }
+function forOverBox(i,j){
+  if (
+    mouseX > boxes[i][j].x &&
+    mouseX < boxes[i][j].x + boxes[i][j].side &&
+    mouseY > boxes[i][j].y &&
+    mouseY < boxes[i][j].y + boxes[i][j].side
+  ) {
+    { boxes[i][j].border = "rgb(255, 193, 152)" 
+      boxes[i][j].overBox = true  }
+  }
+  else {
+    { boxes[i][j].border = "black" 
+    boxes[i][j].overBox = false  }
+  }
+}
+
+
 function overBox(j) {
-  let overBox = false;
   for (let i = 0; i < boardSize; i++) {
-    if (
-      mouseX > boxes[i][j].x &&
-      mouseX < boxes[i][j].x + boxes[i][j].side &&
-      mouseY > boxes[i][j].y &&
-      mouseY < boxes[i][j].y + boxes[i][j].side
-    ) {
-      overBox = true;
-      { boxes[i][j].border = "rgb(255, 193, 152)" }
-    }
-    else {
-      { boxes[i][j].border = "black" }
-      overBox = false;
-    }
+    forOverBox(i,j)
   }
 
 }
-
 function overBoxColumn(i) {
   let overBox = false;
   for (let j = 1; j < boardSize - 1; j++) {
-    if (
-      mouseX > boxes[i][j].x &&
-      mouseX < boxes[i][j].x + boxes[i][j].side &&
-      mouseY > boxes[i][j].y &&
-      mouseY < boxes[i][j].y + boxes[i][j].side
-    ) {
-      overBox = true;
-      { boxes[i][j].border = "rgb(255, 193, 152)" }
-    }
-    else {
-      { boxes[i][j].border = "black" }
-      overBox = false;
-    }
+    forOverBox(i,j)
   }
 
 }
+
+function mousePressed(){
+  for (let i = 0; i < boardSize; i++) {
+    for (let j = 0; j < boardSize; j++) {
+      if (boxes[i][j].overBox)
+      {
+        boxes[i][j].border = "blue"
+      }
+    }
+  }
+}
+
+
 
 
 function creatBoxes() {
@@ -69,7 +76,7 @@ function creatBoxes() {
     for (let j = 0; j < boardSize; j++) {
       stroke(boxes[i][j].border)
       fill(boxes[i][j].color)
-      rect(boxes[i][j].x, boxes[i][j].y, boxes[i][j].side, boxes[i][j].side)
+      rect(boxes[i][j].x, boxes[i][j].y, boxes[i][j].side, boxes[i][j].side,5)
     }
   }
 }
