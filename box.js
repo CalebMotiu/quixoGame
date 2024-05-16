@@ -1,7 +1,5 @@
 let boxes = [[], [], [], [], []]
 
-const boxesRow = 1;
-const boxesColumn = 1;
 const boardSize = 5;
 const startingPosition = 25;
 const margin = 20;
@@ -20,53 +18,43 @@ function initBoxes() {
         side: side,
         txt: "",
         border: "black",
-        overBox: false
+        overBox: false,
+        locked: false
 
       }
     }
   }
 }
-function forOverBox(i,j){
+function forOverBox(i, j) {
   if (
     mouseX > boxes[i][j].x &&
     mouseX < boxes[i][j].x + boxes[i][j].side &&
     mouseY > boxes[i][j].y &&
     mouseY < boxes[i][j].y + boxes[i][j].side
   ) {
-    { boxes[i][j].border = "rgb(255, 193, 152)" 
-      boxes[i][j].overBox = true  }
+      boxes[i][j].border = "rgb(255, 193, 152)"
+      boxes[i][j].overBox = true
   }
   else {
-    { boxes[i][j].border = "black" 
-    boxes[i][j].overBox = false  }
+      boxes[i][j].border = "black"
+      boxes[i][j].overBox = false
   }
 }
 
 
 function overBox(j) {
   for (let i = 0; i < boardSize; i++) {
-    forOverBox(i,j)
+    forOverBox(i, j)
   }
 
 }
 function overBoxColumn(i) {
-  let overBox = false;
   for (let j = 1; j < boardSize - 1; j++) {
-    forOverBox(i,j)
+    forOverBox(i, j)
   }
 
 }
 
-function mousePressed(){
-  for (let i = 0; i < boardSize; i++) {
-    for (let j = 0; j < boardSize; j++) {
-      if (boxes[i][j].overBox)
-      {
-        boxes[i][j].border = "blue"
-      }
-    }
-  }
-}
 
 
 
@@ -76,7 +64,7 @@ function creatBoxes() {
     for (let j = 0; j < boardSize; j++) {
       stroke(boxes[i][j].border)
       fill(boxes[i][j].color)
-      rect(boxes[i][j].x, boxes[i][j].y, boxes[i][j].side, boxes[i][j].side,5)
+      rect(boxes[i][j].x, boxes[i][j].y, boxes[i][j].side, boxes[i][j].side, 5)
     }
   }
 }
