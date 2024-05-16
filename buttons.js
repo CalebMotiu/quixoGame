@@ -34,6 +34,6 @@ function saveName() {
     }
     let name2 = inputPlayer2.value();
     if (name2 === '') {
-        name2 = 'Player 2'; // This time for player2
+        name2 = 'Player 2'; // Default value
     }
 }
