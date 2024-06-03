@@ -5,10 +5,10 @@ function forOverBox(i, j) {
     mouseY > boxes[i][j].y &&
     mouseY < boxes[i][j].y + boxes[i][j].side
   ) {
-      boxes[i][j].overBox = true
+    boxes[i][j].overBox = true
   }
   else {
-      boxes[i][j].overBox = false
+    boxes[i][j].overBox = false
   }
 }
 

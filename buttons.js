@@ -1,6 +1,7 @@
 function buttonSetup() {
     let button = createButton('RESET');
     button.position(board.side / 2 - 35, 530);
+    button.mousePressed(initBoxes);
     let inputPlayer1 = createInput();
     inputPlayer1.attribute('placeholder', 'Player1')
     inputPlayer1.position(displayWidth / 2, displayHeight / 20);
@@ -36,4 +37,5 @@ function saveName() {
     if (name2 === '') {
         name2 = 'Player 2'; // Default value
     }
+    currentPlayer = name1;
 }

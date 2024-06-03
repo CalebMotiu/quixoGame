@@ -7,7 +7,6 @@ const borderSize = 1;
 const side = (board.side - (margin * 2) - (2 * borderSize * (boardSize - 1))) / boardSize;
 const distanceBetweenBoxes = 2;
 
-
 function initBoxes() {
   for (let i = 0; i < boardSize; i++) {
     for (let j = 0; j < boardSize; j++) {
