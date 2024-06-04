@@ -45,12 +45,12 @@ function draw() {
     else text(win, canvasWidth / 2, canvasHeight / 2);
     textSize(50);
 
-    fill("rgb(222, 133, 18)");
+    fill("rgb(255, 255, 255)");
     textSize(32);
     textAlign(CENTER, CENTER);
     text(player1, 200, 150);
 
-    fill("rgb(222, 133, 18)");
+    fill("rgb(255, 255, 255)");
     textSize(32);
     textAlign(CENTER, CENTER);
     text(player2, 1100, 150);
