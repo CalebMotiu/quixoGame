@@ -40,8 +40,11 @@ function draw() {
     patrat.winner();
     if (humanOrComputer == "null")
         fill("black");
-    if (win == "" && humanOrComputer != "null")
+    if (win == "" && humanOrComputer != "null") {
+        fill("rgb(237,201,175)");
+        rect(140, 120, 460, 460, 20);
         patrat.afisare(tableWidthSide, tableHeightSide);
+    }
     else text(win, canvasWidth / 2, canvasHeight / 2);
     textSize(50);
 
