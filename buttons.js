@@ -56,13 +56,24 @@ function createNameInput() {
     name2bt.style('font-family', "'Courier New', Courier, monospace");
     name2bt.style('border-radius', '5px');
     name2bt.style('box-shadow', '2px 2px 5px rgba(0, 0, 0, 0.2)');
+
     name1bt.mousePressed(name1);
     name2bt.mousePressed(name2);
+
     resetbt = createButton("RESET");
     resetbt.position(100, 25);
     resetbt.size(90, 55);
     resetbt.mousePressed(reset);
-    resetbt.style("background-color", "rgb(240, 168, 104)");
+
+    resetbt.style('background-color', '#d3b7a1');
+    resetbt.style('color', '#4a4846');
+    resetbt.style('padding', '10px 20px');
+    resetbt.style('border', 'none');
+    resetbt.style('font-size', '16px');
+    resetbt.style('font-family', "'Courier New', Courier, monospace");
+    resetbt.style('border-radius', '5px');
+    resetbt.style('box-shadow', '2px 2px 5px rgba(0, 0, 0, 0.2');
+    
 }
 
 function reset() {
