@@ -13,13 +13,13 @@ function createNameInput() {
     name2inp.size(cubeSize * 2, 10);
     name1bt = createButton("Add name");
     name1bt.position(
-        tableWidthSide + cubeSize * 1.5 + cubeSize - 8,
-        tableHeightSide - cubeSize / 3
+        tableWidthSide + cubeSize * 1.5 + cubeSize / 2,
+        tableHeightSide - cubeSize / 1
     );
     name2bt = createButton("Add name");
     name2bt.position(
-        tableWidthSide + cubeSize * 1.5 + cubeSize - 8,
-        tableHeightSide + cubeSize * 5.7
+        tableWidthSide + cubeSize * 1.5 + cubeSize / 2,
+        tableHeightSide + cubeSize * 5.9
     );
     name1inp.style('background-color', '#d3b7a1');
     name1inp.style('color', '#4a4846');
@@ -38,7 +38,7 @@ function createNameInput() {
     name2inp.style('font-family', "'Courier New', Courier, monospace");
     name2inp.style('border-radius', '5px');
     name2inp.style('box-shadow', '2px 2px 5px rgba(0, 0, 0, 0.2)');
-   
+
     name1bt.style('background-color', '#d3b7a1');
     name1bt.style('color', '#4a4846');
     name1bt.style('padding', '10px 20px');
@@ -47,7 +47,7 @@ function createNameInput() {
     name1bt.style('font-family', "'Courier New', Courier, monospace");
     name1bt.style('border-radius', '5px');
     name1bt.style('box-shadow', '2px 2px 5px rgba(0, 0, 0, 0.2)');
-    
+
     name2bt.style('background-color', '#d3b7a1');
     name2bt.style('color', '#4a4846');
     name2bt.style('padding', '10px 20px');
@@ -61,7 +61,7 @@ function createNameInput() {
     name2bt.mousePressed(name2);
 
     resetbt = createButton("RESET");
-    resetbt.position(100, 25);
+    resetbt.position(100, 625);
     resetbt.size(90, 55);
     resetbt.mousePressed(reset);
 
@@ -73,7 +73,7 @@ function createNameInput() {
     resetbt.style('font-family', "'Courier New', Courier, monospace");
     resetbt.style('border-radius', '5px');
     resetbt.style('box-shadow', '2px 2px 5px rgba(0, 0, 0, 0.2');
-    
+
 }
 
 function reset() {
