@@ -27,7 +27,14 @@ class Patrat {
         }
 
     }
-
+    reset() {
+        for (let r = 0; r < length; r++)
+            for (let c = 0; c < length; c++) {
+                this.patrat[r][c].value = "0";
+                this.patrat[r][c].color = "rgb(237,201,175)";
+                win = "";
+            }
+    }
     afisare(xInit, y) {
         let x = xInit;
         for (var r = 0; r < length; r++) {
