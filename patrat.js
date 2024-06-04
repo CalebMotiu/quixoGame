@@ -38,7 +38,7 @@ class Patrat {
                 if (this.patrat[r][c].color == "red") fill("rgb(43, 255, 255)");
                 else fill("rgb(194,178,128)");
 
-                rect(x, y, cubeSize, cubeSize,10);
+                rect(x, y, cubeSize, cubeSize, 10);
 
 
                 if (this.patrat[r][c].value == "o") {
@@ -69,6 +69,104 @@ class Patrat {
                 x += cubeSize;
             }
             y += cubeSize;
+        }
+    }
+    name1() {
+        player1 = name1inp.value();
+        name1bt.hide();
+        name1inp.hide();
+    }
+    name2() {
+        player2 = name2inp.value();
+        name2bt.hide();
+        name2inp.hide();
+    }
+    computer() {
+        let r = 1,
+            c = 1;
+
+        while ((r != 0 && r != 4 && c != 0 && c != 4) || this.patrat[r][c].value == "o") {
+            r = floor(random(0, 5));
+            c = floor(random(0, 5));
+        }
+
+        //conditii pentru coloane si randuri
+        if (r == 0 && (this.patrat[r][c].value == "0" || this.patrat[r][c].value == change)) {
+            selectedC = c;
+            selectedR = r;
+            if (c != 4) this.patrat[r][length - 1].color = "red"; // cel mai din dreapta patrat
+            this.patrat[length - 1][c].color = "red"; // cel mai din jos patrat
+            if (c != 0) this.patrat[0][0].color = "red"; // cea mai din stanga sus
+        } else if (r == 4 && (this.patrat[r][c].value == "0" || this.patrat[r][c].value == change)) {
+            selectedC = c;
+            selectedR = r;
+            if (c != 4) this.patrat[4][4].color = "red"; // cel mai din drapta jos
+            this.patrat[0][c].color = "red"; // cea mai de sus
+            if (c != 0) this.patrat[4][0].color = "red"; // cea mai din stanga sus
+        } else if (c == 0 && (this.patrat[r][c].value == "0" || this.patrat[r][c].value == change)) {
+            selectedC = c;
+            selectedR = r;
+            if (r != 0) this.patrat[0][0].color = "red"; // cea mai din stanga 
+            this.patrat[r][4].color = "red"; // cea mai din dreapta
+            if (r != 4) this.patrat[4][0].color = "red"; // cea mai din stanga
+        } else if (c == 4 && (this.patrat[r][c].value == "0" || this.patrat[r][c].value == change)) {
+            selectedC = c;
+            selectedR = r;
+            if (r != 0) this.patrat[0][4].color = "red"; // cea mai din dreapta sus
+            this.patrat[r][0].color = "red"; // cea mai din stanga
+            if (r != 4) this.patrat[4][4].color = "red"; // cea mai din drepata jos
+        }
+        while ((r != 0 && r != 4 && c != 0 && c != 4) || this.patrat[r][c].color != "red") {
+            r = floor(random(0, 5));
+            c = floor(random(0, 5));
+        }
+
+        if (this.patrat[r][c].color == "red") {
+            if (r == 0 && c != 0 && c != 4) {
+                this.patrat[4][c].value = this.patrat[3][c].value; // scad valorile pe aceeasi coloana
+                this.patrat[3][c].value = this.patrat[2][c].value;
+                this.patrat[2][c].value = this.patrat[1][c].value;
+                this.patrat[1][c].value = this.patrat[0][c].value;
+            }
+            if (r == 4 && c != 0 && c != 4) {
+                this.patrat[0][c].value = this.patrat[1][c].value; // urca valorile pe aceeasi coloana
+                this.patrat[1][c].value = this.patrat[2][c].value;
+                this.patrat[2][c].value = this.patrat[3][c].value;
+                this.patrat[3][c].value = this.patrat[4][c].value;
+            }
+            if (c == 0 && r != 0 && r != 4) {
+                this.patrat[r][4].value = this.patrat[r][3].value; // cresc pe dreapta pe acelasi rand
+                this.patrat[r][3].value = this.patrat[r][2].value;
+                this.patrat[r][2].value = this.patrat[r][1].value;
+                this.patrat[r][1].value = this.patrat[r][0].value;
+            }
+            if (c == 4 && r != 0 && r != 4) {
+                this.patrat[r][0].value = this.patrat[r][1].value; // cresc pe stanga pe acelasi rand
+                this.patrat[r][1].value = this.patrat[r][2].value;
+                this.patrat[r][2].value = this.patrat[r][3].value;
+                this.patrat[r][3].value = this.patrat[r][4].value;
+            }
+
+            if (r == 0 && c == 0) {
+                if (selectedR == r) {
+                    for (let i = selectedC; i > 0; i--)
+                        this.patrat[0][i].value = this.patrat[0][i - 1].value; //stanga pe acelasi rand
+                }
+                if (selectedC == c) {
+                    for (let i = selectedR; i > 0; i--)
+                        this.patrat[i][0].value = this.patrat[i - 1][0].value; // sus pe aceeasi coloana
+                }
+            }
+
+            this.patrat[r][c].value = "x";
+            change = "o";
+        }
+        for (let i = 0; i < length; i++) {
+            for (let j = 0; j < length; j++) {
+                if (this.patrat[i][j].color == "red") {
+                    this.patrat[i][j].color = "";
+                }
+            }
         }
     }
 
@@ -291,6 +389,6 @@ class Patrat {
                 else win = player2 + " won the game ";
                 c = length;
             }
-        }
-    }
+        }
+    }
 }
