@@ -21,6 +21,22 @@ function createNameInput() {
         tableWidthSide + cubeSize * 1.5 + cubeSize - 8,
         tableHeightSide + cubeSize * 5.7
     );
+    name1inp.style('background-color', '#d3b7a1');
+    name1inp.style('color', '#4a4846');
+    name1inp.style('padding', '10px 20px');
+    name1inp.style('border', 'none');
+    name1inp.style('font-size', '16px');
+    name1inp.style('font-family', "'Courier New', Courier, monospace");
+    name1inp.style('border-radius', '5px');
+    name1inp.style('box-shadow', '2px 2px 5px rgba(0, 0, 0, 0.2)');
+    name2inp.style('background-color', '#d3b7a1');
+    name2inp.style('color', '#4a4846');
+    name2inp.style('padding', '10px 20px');
+    name2inp.style('border', 'none');
+    name2inp.style('font-size', '16px');
+    name2inp.style('font-family', "'Courier New', Courier, monospace");
+    name2inp.style('border-radius', '5px');
+    name2inp.style('box-shadow', '2px 2px 5px rgba(0, 0, 0, 0.2)');
     name1bt.mousePressed(name1);
     name2bt.mousePressed(name2);
     resetbt = createButton("RESET");
