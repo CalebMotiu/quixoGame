@@ -36,12 +36,14 @@ function mouseClicked() {
 
 
 function draw() {
+    strokeWeight(2);
     background("rgb(222, 133, 18)");
     patrat.winner();
     if (humanOrComputer == "null")
         fill("black");
     if (win == "" && humanOrComputer != "null") {
         fill("rgb(237,201,175)");
+        strokeWeight(2);
         rect(tableWidthSide - 15, tableHeightSide - 15, cubeSize * 5 + 30, cubeSize * 5 + 30, 20);
         patrat.afisare(tableWidthSide, tableHeightSide);
     }
