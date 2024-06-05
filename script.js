@@ -55,11 +55,13 @@ function draw() {
     fill("rgb(255, 255, 255)");
     textSize(32);
     textAlign(CENTER, CENTER);
+    strokeWeight(2);
     text(player1, canvasWidth / 2, canvasHeight / 10);
 
     fill("rgb(255, 255, 255)");
     textSize(32);
     textAlign(CENTER, CENTER);
+    strokeWeight(2);
     text(player2, canvasWidth / 2, canvasHeight / 1.1);
 }
 
