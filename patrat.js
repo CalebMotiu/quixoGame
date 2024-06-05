@@ -353,8 +353,9 @@ class Patrat {
             }
 
             if (count == 0) {
-                if (name == "o") win = player1 + " won the game ";
-                else win = player2 + " won the game ";
+                if (name == "o") win = player1;
+                else win = player2;
+                win+=" WINS!";
                 r = length;
             }
         }
@@ -365,8 +366,9 @@ class Patrat {
                 this.patrat[2][2].value == this.patrat[3][3].value &&
                 this.patrat[3][3].value == this.patrat[4][4].value
             ) {
-                if (name == "o") win = player1 + " won the game ";
-                else win = player2 + " won the game ";
+                if (name == "o") win = player1  ;
+                else win = player2  ;
+                win+=" WINS!";
             }
         if (
             this.patrat[0][4].value == this.patrat[1][3].value &&
@@ -375,8 +377,9 @@ class Patrat {
             this.patrat[2][2].value == this.patrat[3][1].value &&
             this.patrat[3][1].value == this.patrat[4][0].value
         ) {
-            if (name == "o") win = player1 + " won the game ";
-            else win = player2 + " won the game ";
+            if (name == "o") win = player1 ;
+            else win = player2 ;
+            win+=" WINS!";
         }
 
 
@@ -392,10 +395,12 @@ class Patrat {
             }
 
             if (count == 0) {
-                if (name == "o") win = player1 + " won the game  ";
-                else win = player2 + " won the game ";
+                if (name == "o") win = player1;
+                else win = player2;
+                win+=" WINS!";
                 c = length;
             }
         }
+        
     }
 }
