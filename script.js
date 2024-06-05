@@ -43,8 +43,10 @@ function draw() {
         fill("black");
     if (win == "" && humanOrComputer != "null") {
         fill("rgb(237,201,175)");
-        strokeWeight(2);
+        strokeWeight(15);
+        stroke("rgb(139, 87, 19)");
         rect(tableWidthSide - 15, tableHeightSide - 15, cubeSize * 5 + 30, cubeSize * 5 + 30, 20);
+        stroke("black");
         patrat.afisare(tableWidthSide, tableHeightSide);
     }
     else text(win, canvasWidth / 2, canvasHeight / 2);
@@ -53,12 +55,12 @@ function draw() {
     fill("rgb(255, 255, 255)");
     textSize(32);
     textAlign(CENTER, CENTER);
-    text(player1, 200, 150);
+    text(player1, canvasWidth / 2, canvasHeight / 10);
 
     fill("rgb(255, 255, 255)");
     textSize(32);
     textAlign(CENTER, CENTER);
-    text(player2, 1100, 150);
+    text(player2, canvasWidth / 2, canvasHeight / 1.1);
 }
 
 
