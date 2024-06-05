@@ -42,7 +42,7 @@ function draw() {
         fill("black");
     if (win == "" && humanOrComputer != "null") {
         fill("rgb(237,201,175)");
-        rect(tableWidthSide - 15, tableHeightSide - 15, 460, 460, 20);
+        rect(tableWidthSide - 7, tableHeightSide - 7, 446, 446, 20);
         patrat.afisare(tableWidthSide, tableHeightSide);
     }
     else text(win, canvasWidth / 2, canvasHeight / 2);
